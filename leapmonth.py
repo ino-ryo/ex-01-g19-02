@@ -14,8 +14,7 @@ def main():
     elif month in [ 4, 6, 9, 11 ]:
     	num_days = 30
     else:
-        judge = ( year%4 + year%100 + year%400 )%2
-        print( judge )
+        judge = ( year%4==0 + year%100==0 + year%400==0 )%2
         if judge == 1:
             num_days = 29
         else:
@@ -31,7 +30,7 @@ def main():
      #        num_days = 29
      #    else:
      #        num_days = 28
-    		
+
     print("Month of ", month, "/", year, " has ", num_days, " days.", sep=",")
 
 if __name__ == '__main__':
