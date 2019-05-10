@@ -14,13 +14,25 @@ def main():
     elif month in [ 4, 6, 9, 11 ]:
     	num_days = 30
     else:
-    	# if month = februrary
-    	if year%4 == 0:
-    		num_days = 29
-    	else:
-    		num_days = 28
+        judge = ( year%4 + year%100 + year%400 )%2
+        print( judge )
+        if judge == 1:
+            num_days = 29
+        else:
+            num_days = 28
+
+    	# # month = februrary
+     #    if year%100 == 0:
+     #        if year%400 == 0:
+     #            num_days = 29
+     #        else:
+     #            num_days = 28
+     #    elif year%4 == 0:
+     #        num_days = 29
+     #    else:
+     #        num_days = 28
     		
-    print("Month of ", month, "/", year, " has ", num_days, " days.")
+    print("Month of ", month, "/", year, " has ", num_days, " days.", sep=",")
 
 if __name__ == '__main__':
     main()
