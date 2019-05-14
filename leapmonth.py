@@ -2,17 +2,17 @@ import sys
 
 def main():
     usage = 'illigal inputs; usage: python leapmonth.py year month'
+    
     try:
+        # read input from command line
         year = int(sys.argv[1])
         month = int(sys.argv[2])
 
-        # convert to integer
-        year = int( year )
-        month = int( month )
+        # value validation
         if (month < 0 or year < 0 or month > 12):
             raise Exception()
 
-        # if section
+        # days of month judgment
         if month in [ 1, 3, 5, 7, 8, 10, 12 ]:
         	num_days = 31
         elif month in [ 4, 6, 9, 11 ]:
@@ -24,6 +24,7 @@ def main():
             else:
                 num_days = 28
 
+        # output
         print("Month of ", month, "/", year, " has ", num_days, " days.", sep='')
 
     except:
