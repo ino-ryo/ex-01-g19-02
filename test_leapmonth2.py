@@ -1,4 +1,5 @@
 import sys
+import unittest
 from io import StringIO
 from unittest import TestCase
 import calendar
@@ -44,3 +45,6 @@ class TestMain(TestCase):
                 actual = self.io.getvalue().strip()
                 with self.subTest(pattern['in']):
                     self.assertEqual(actual, pattern['expected'])
+
+if __name__ == '__main__':
+    unittest.main()
